@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tirth Thaker - Business Analyst and Product Management professional with expertise in Agile delivery, requirements gathering, and enterprise software solutions.">
+    <title>Tirth Thaker | Business Analyst & Product Management</title>
+    <style>
+        :root {
+            --bg: #eef5ff;
+            --bg-alt: #f7fbff;
+            --card: rgba(255, 255, 255, 0.78);
+            --card-border: rgba(15, 23, 42, 0.08);
+            --text: #13213c;
+            --muted: #5e6b84;
+            --accent: #2563eb;
+            --accent-2: #14b8a6;
+            --accent-3: #f97316;
+            --shadow: 0 22px 60px rgba(37, 99, 235, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 26%),
+                radial-gradient(circle at top right, rgba(20, 184, 166, 0.12), transparent 22%),
+                radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.10), transparent 24%),
+                linear-gradient(180deg, var(--bg), var(--bg-alt) 100%);
+            min-height: 100vh;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .page {
+            width: min(1180px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 28px 0 56px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #ffffff;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.22);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.45fr 0.95fr;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .panel {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(16px);
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .panel:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 26px 60px rgba(20, 44, 88, 0.12);
+        }
+
+        .hero-main {
+            padding: 36px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        h1 {
+            margin: 18px 0 14px;
+            font-size: clamp(2.5rem, 5vw, 4.8rem);
+            line-height: 1.02;
+            letter-spacing: -0.04em;
+        }
+
+        .subtitle {
+            margin: 0 0 24px;
+            color: var(--muted);
+            font-size: 1.08rem;
+            line-height: 1.8;
+            max-width: 68ch;
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 26px 0 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 18px;
+            border-radius: 14px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .btn:hover { transform: translateY(-1px); }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #ffffff;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.12);
+            color: var(--text);
+        }
+
+        .hero-side {
+            padding: 24px;
+            display: grid;
+            gap: 16px;
+        }
+
+        .profile-card {
+            padding: 24px;
+            border-radius: 22px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .profile-pic {
+            width: 74px;
+            height: 74px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, var(--accent-3), var(--accent));
+            display: grid;
+            place-items: center;
+            color: #04111f;
+            font-weight: 800;
+            font-size: 1.4rem;
+            margin-bottom: 14px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .stat {
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .stat span { color: var(--muted); font-size: 0.92rem; line-height: 1.45; }
+
+        .section {
+            margin-top: 24px;
+            padding: 28px;
+        }
+
+        .section h2 {
+            margin: 0 0 12px;
+            font-size: 1.7rem;
+        }
+
+        .section p.lead {
+            margin: 0 0 20px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .feature, .info-card {
+            padding: 20px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature:hover, .info-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 38px rgba(17, 40, 84, 0.08);
+        }
+
+        .feature h3, .info-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.05rem;
+        }
+
+        .feature p, .info-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .tag {
+            padding: 9px 12px;
+            border-radius: 999px;
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.12);
+            color: #214b9a;
+            font-size: 0.92rem;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 14px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            align-items: start;
+            padding: 18px 20px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .timeline-item small {
+            color: var(--muted);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            white-space: nowrap;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(20, 184, 166, 0.10);
+            border: 1px solid rgba(20, 184, 166, 0.18);
+            color: #0f766e;
+            font-size: 0.88rem;
+        }
+
+        .footer-cta {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .connect-card {
+            padding: 24px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.10), rgba(20, 184, 166, 0.10));
+            border: 1px solid rgba(255,255,255,0.10);
+        }
+
+        .connect-list {
+            display: grid;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .connect-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .connect-link span:last-child { color: var(--muted); }
+
+        .carousel {
+            margin-top: 24px;
+            padding: 28px;
+        }
+
+        .carousel-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .icon-btn {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(37, 99, 235, 0.16);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.72);
+            color: var(--text);
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+        }
+
+        .icon-btn:hover { border-color: rgba(37, 99, 235, 0.3); }
+
+        .carousel-window {
+            overflow: hidden;
+            border-radius: 24px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.45s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 18px;
+            padding: 22px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(20, 184, 166, 0.05));
+            border: 1px solid rgba(37, 99, 235, 0.10);
+        }
+
+        .news-card, .quote-card {
+            padding: 22px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.82);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+        }
+
+        .slide-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+        }
+
+        .news-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .news-card h3 {
+            margin: 12px 0 10px;
+            font-size: 1.35rem;
+        }
+
+        .news-card p, .quote-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .quote-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 16px;
+            background: linear-gradient(180deg, rgba(37, 99, 235, 0.08), rgba(20, 184, 166, 0.08));
+        }
+
+        .quote-mark {
+            font-size: 3rem;
+            line-height: 1;
+            color: rgba(37, 99, 235, 0.18);
+            margin-bottom: -8px;
+        }
+
+        .quote-author {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            border: 0;
+            background: rgba(37, 99, 235, 0.22);
+            cursor: pointer;
+        }
+
+        .dot.active { background: var(--accent); width: 28px; }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .cert-card {
+            padding: 18px;
+            border-radius: 16px;
+            border: 1px solid rgba(37, 99, 235, 0.14);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), rgba(20, 184, 166, 0.04));
+            display: grid;
+            gap: 10px;
+            align-content: start;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 36px rgba(20, 44, 88, 0.10);
+        }
+
+        .cert-card small {
+            color: var(--muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .cert-card h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.45;
+        }
+
+        .note {
+            color: var(--muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 960px) {
+            .hero, .footer-cta, .grid-3 { grid-template-columns: 1fr; }
+            .nav { flex-direction: column; align-items: flex-start; }
+            .timeline-item { grid-template-columns: 1fr; }
+            .carousel-slide { grid-template-columns: 1fr; }
+            .cert-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .page { width: min(100% - 20px, 100%); padding-top: 16px; }
+            .hero-main, .section, .hero-side { padding: 20px; }
+            .carousel { padding: 20px; }
+            h1 { font-size: 2.3rem; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <header class="nav">
+            <div class="brand">
+                <div class="brand-mark">T</div>
+                <div>
+                    <div>Tirth Thaker</div>
+                    <small style="color: var(--muted); font-weight: 500;">Business Analyst • Product Management</small>
+                </div>
+            </div>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="#ai-news">AI Highlights</a>
+                <a href="#about">About</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#education">Education</a>
+                <a href="#connect">Connect</a>
+            </nav>
+        </header>
+
+        <section class="panel section carousel" id="ai-news">
+            <div class="carousel-head">
+                <div>
+                    <h2 style="margin-bottom: 8px;">AI News, Product Insights, And Quotes</h2>
+                    <p class="lead" style="margin-bottom: 0;">A friendly carousel for quick updates on how AI is changing the way we build, manage, and think about products.</p>
+                </div>
+                <div class="carousel-controls">
+                    <button class="icon-btn" type="button" aria-label="Previous slide" onclick="prevSlide()">‹</button>
+                    <button class="icon-btn" type="button" aria-label="Next slide" onclick="nextSlide()">›</button>
+                </div>
+            </div>
+
+            <div class="carousel-window">
+                <div class="carousel-track" id="carouselTrack">
+                    <article class="carousel-slide">
+                        <div class="news-card">
+                            <img class="slide-image" src="./assets/images/ai-revolution.svg" alt="Abstract AI visualization with glowing neural network lights" loading="lazy">
+                            <div class="news-kicker">AI Revolution</div>
+                            <h3>How AI Is Revolutionizing Industries</h3>
+                            <p>
+                                AI is helping teams automate repetitive work, analyze data faster, personalize user experiences, and make smarter decisions.
+                                From customer support to operations, businesses are using AI to move quicker and work more intelligently.
+                            </p>
+                        </div>
+                        <div class="quote-card">
+                            <div>
+                                <div class="quote-mark">“</div>
+                                <p>
+                                    "Artificial intelligence is the new electricity."
+                                </p>
+                            </div>
+                            <div class="quote-author">
+                                <span>Andrew Ng</span>
+                                <span class="badge">AI Thought Leader</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="carousel-slide">
+                        <div class="news-card">
+                            <img class="slide-image" src="./assets/images/ai-product-management.svg" alt="Digital illustration representing AI for product management" loading="lazy">
+                            <div class="news-kicker">AI For Product Management</div>
+                            <h3>AI Is Becoming A Product Manager’s Best Co-Pilot</h3>
+                            <p>
+                                Product teams are using AI for requirement discovery, user feedback analysis, roadmap ideas, backlog prioritization, and faster documentation.
+                                That means more time for strategy, user empathy, and high-impact product thinking.
+                            </p>
+                        </div>
+                        <div class="quote-card">
+                            <div>
+                                <div class="quote-mark">“</div>
+                                <p>
+                                    "AI is one of the most important things humanity is working on."
+                                </p>
+                            </div>
+                            <div class="quote-author">
+                                <span>Sundar Pichai</span>
+                                <span class="badge">Google CEO</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="carousel-slide">
+                        <div class="news-card">
+                            <img class="slide-image" src="./assets/images/ai-strategy.svg" alt="Futuristic illustration representing AI powered strategic decisions" loading="lazy">
+                            <div class="news-kicker">Product + AI Thinking</div>
+                            <h3>Why AI Matters For Modern Product Strategy</h3>
+                            <p>
+                                The best product teams are combining human judgment with AI support to improve discovery, speed up insights, and design better
+                                experiences. In product management, AI is less about replacing people and more about empowering people.
+                            </p>
+                        </div>
+                        <div class="quote-card">
+                            <div>
+                                <div class="quote-mark">“</div>
+                                <p>
+                                    "The best way to predict the future is to invent it."
+                                </p>
+                            </div>
+                            <div class="quote-author">
+                                <span>Alan Kay</span>
+                                <span class="badge">Computer Scientist</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="carousel-dots" aria-label="Carousel navigation">
+                <button class="dot active" type="button" aria-label="Slide 1" onclick="goToSlide(0)"></button>
+                <button class="dot" type="button" aria-label="Slide 2" onclick="goToSlide(1)"></button>
+                <button class="dot" type="button" aria-label="Slide 3" onclick="goToSlide(2)"></button>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="panel hero-main">
+                <div class="eyebrow">📌 Available for collaboration, product discussions, and BA mentorship</div>
+                <h1>Business Analyst & Product Management professional helping teams build better products.</h1>
+                <p class="subtitle">
+                    I’m Tirth Thaker — a results-driven Business Analyst and Product Management professional with 4+ years of experience in requirement gathering,
+                    product lifecycle management, stakeholder collaboration, Agile delivery, UAT, and process improvement. I help transform business needs into clear
+                    documentation, practical roadmaps, and scalable product outcomes.
+                </p>
+                <p class="subtitle">
+                    My work spans BFSI, cybersecurity, identity and access management, privileged access management, multi-factor authentication, endpoint privilege
+                    management, and role-based access control — with a strong focus on turning complexity into clarity.
+                </p>
+
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="https://www.linkedin.com/in/tirth-thaker-psm-i-and-pspo-i-trained-416a19185/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+                    <a class="btn btn-secondary" href="https://topmate.io/tirth_thakerpsm_i_and_psp/" target="_blank" rel="noopener noreferrer">Explore Topmate</a>
+                    <a class="btn btn-secondary" href="https://www.instagram.com/tirththaker11/?hl=en" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+                </div>
+            </div>
+
+            <aside class="panel hero-side">
+                <div class="profile-card">
+                    <div class="profile-pic">TT</div>
+                    <h2 style="margin: 0 0 8px; font-size: 1.4rem;">Tirth Thaker</h2>
+                    <p class="note">Business Analyst | Product Enthusiast | Agile Practitioner | AI Learner</p>
+                    <div class="tags" aria-label="Highlights">
+                        <span class="tag">Requirements</span>
+                        <span class="tag">Product Strategy</span>
+                        <span class="tag">Agile Delivery</span>
+                        <span class="tag">AI for PM</span>
+                    </div>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat">
+                        <strong>4+ Years</strong>
+                        <span>Experience in business analysis and product management</span>
+                    </div>
+                    <div class="stat">
+                        <strong>BFSI + Security</strong>
+                        <span>Deep domain exposure across enterprise security workflows</span>
+                    </div>
+                    <div class="stat">
+                        <strong>BRD → UAT</strong>
+                        <span>Strong documentation, process mapping, and validation skills</span>
+                    </div>
+                    <div class="stat">
+                        <strong>AI + Product</strong>
+                        <span>Sharing insights on how AI improves product and business outcomes</span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section class="panel section" id="about">
+            <h2>Who I Am</h2>
+            <p class="lead">
+                I’m passionate about helping organizations build products that are useful, scalable, and aligned to real business needs.
+                I enjoy working at the intersection of business, technology, and user experience — translating ideas into structured requirements and actionable delivery plans.
+            </p>
+            <div class="grid-3">
+                <div class="feature">
+                    <h3>What I Do</h3>
+                    <p>
+                        I gather requirements, define user stories and acceptance criteria, create BRDs/FRDs/SRS documents, support UAT,
+                        and collaborate with cross-functional teams to ensure smooth delivery.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>How I Work</h3>
+                    <p>
+                        I bring a structured, Agile-first mindset to product work — balancing stakeholder goals, feasibility, customer value,
+                        and delivery timelines.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>What I Share</h3>
+                    <p>
+                        On Topmate and Instagram, I share guidance around business analysis, product management, AI-driven product thinking,
+                        and career growth in product roles.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel section" id="expertise">
+            <h2>Core Competencies</h2>
+            <p class="lead">A snapshot of the skills and domains I bring into every project.</p>
+
+            <div class="grid-3">
+                <div class="info-card">
+                    <h3>Product Management</h3>
+                    <p>Product strategy, roadmap planning, MVP definition, feature prioritization, backlog management, release planning, lifecycle management, and go-to-market support.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Business Analysis</h3>
+                    <p>Requirement gathering, BRD, FRD, SRS, user stories, acceptance criteria, gap analysis, stakeholder management, workflow analysis, and business process mapping.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Domain Expertise</h3>
+                    <p>BFSI workflows, enterprise security, PAM, MFA, EPM, RBAC, identity & access management, and zero-trust-focused product thinking.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Agile Delivery</h3>
+                    <p>Scrum, Kanban, sprint planning, backlog grooming, sprint reviews, retrospectives, cross-functional collaboration, and Agile documentation.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Tools & Technologies</h3>
+                    <p>Jira, Confluence, SQL, Python, Postman, REST APIs, Tableau, Power BI, and Zoho Analytics.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Content Focus</h3>
+                    <p>Business analysis, product management, AI in product development, workflow thinking, and practical lessons from real-world product work.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel section" id="certifications">
+            <h2>Certifications</h2>
+            <p class="lead">A strong foundation in Scrum, product thinking, analytics, and business analysis.</p>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <small>Professional Credential</small>
+                    <h3>Professional Scrum Master (PSM)</h3>
+                    <span class="badge">Scrum</span>
+                </div>
+                <div class="cert-card">
+                    <small>Professional Credential</small>
+                    <h3>Professional Scrum Product Owner (PSPO)</h3>
+                    <span class="badge">Product</span>
+                </div>
+                <div class="cert-card">
+                    <small>Specialization</small>
+                    <h3>Agile Business Analysis</h3>
+                    <span class="badge">Business Analysis</span>
+                </div>
+                <div class="cert-card">
+                    <small>Specialization</small>
+                    <h3>Certified Product Manager – Pendo</h3>
+                    <span class="badge">Product Management</span>
+                </div>
+                <div class="cert-card">
+                    <small>Specialization</small>
+                    <h3>AI For Product Management</h3>
+                    <span class="badge">AI + PM</span>
+                </div>
+                <div class="cert-card">
+                    <small>Specialization</small>
+                    <h3>Certified Business Analyst – LinkedIn Learning</h3>
+                    <span class="badge">BA Practice</span>
+                </div>
+                <div class="cert-card">
+                    <small>Foundation</small>
+                    <h3>Microsoft Essentials In Business Analysis</h3>
+                    <span class="badge">Business Analysis</span>
+                </div>
+                <div class="cert-card">
+                    <small>Foundation</small>
+                    <h3>Jira Fundamentals – Atlassian</h3>
+                    <span class="badge">Tools</span>
+                </div>
+                <div class="cert-card">
+                    <small>Foundation</small>
+                    <h3>Data Visualization – Coursera</h3>
+                    <span class="badge">Analytics</span>
+                </div>
+                <div class="cert-card">
+                    <small>Foundation</small>
+                    <h3>Project Management Essentials</h3>
+                    <span class="badge">Delivery</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel section" id="education">
+            <h2>Education</h2>
+            <p class="lead">My academic background in Information Technology supports the analytical and technical side of my work.</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div>
+                        <small>K J Somaiya College of Engineering</small>
+                        <strong>Bachelor of Technology in Information Technology</strong>
+                        <p class="note">CGPA: 8.30 / 10.0 • 2018–2022</p>
+                    </div>
+                    <span class="badge">Engineering</span>
+                </div>
+                <div class="timeline-item">
+                    <div>
+                        <small>VidyaMandir Prashala</small>
+                        <strong>Higher Secondary Certificate (HSC)</strong>
+                        <p class="note">Score: 84.46 • Miraj, India • 2017–2018</p>
+                    </div>
+                    <span class="badge">Schooling</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-cta" id="connect">
+            <div class="panel connect-card">
+                <h2 style="margin-top: 0;">Let’s connect</h2>
+                <p class="lead" style="margin-bottom: 0;">
+                    If you want to connect professionally, discuss product and business analysis, or explore how AI can add value to product management,
+                    I’d love to stay in touch.
+                </p>
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="https://www.linkedin.com/in/tirth-thaker-psm-i-and-pspo-i-trained-416a19185/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a class="btn btn-secondary" href="https://topmate.io/tirth_thakerpsm_i_and_psp/" target="_blank" rel="noopener noreferrer">Topmate</a>
+                    <a class="btn btn-secondary" href="https://www.instagram.com/tirththaker11/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+
+                <div class="info-card" style="margin-top: 18px;">
+                    <h3>Prefer email?</h3>
+                    <p>
+                        Reach me directly at
+                        <a href="mailto:tirththaker8704@gmail.com" style="color: var(--accent); font-weight: 600;">tirththaker8704@gmail.com</a>
+                        for professional conversations, collaborations, and opportunities.
+                    </p>
+                </div>
+            </div>
+
+            <div class="panel section" style="margin-top: 0;">
+                <h3 style="margin-top: 0;">Quick links</h3>
+                <div class="connect-list">
+                    <a class="connect-link" href="https://www.linkedin.com/in/tirth-thaker-psm-i-and-pspo-i-trained-416a19185/" target="_blank" rel="noopener noreferrer">
+                        <span>Connect with me on LinkedIn</span>
+                        <span>↗</span>
+                    </a>
+                    <a class="connect-link" href="mailto:tirththaker8704@gmail.com">
+                        <span>Email me at tirththaker8704@gmail.com</span>
+                        <span>✉</span>
+                    </a>
+                    <a class="connect-link" href="https://topmate.io/tirth_thakerpsm_i_and_psp/" target="_blank" rel="noopener noreferrer">
+                        <span>Book or explore Topmate</span>
+                        <span>↗</span>
+                    </a>
+                    <a class="connect-link" href="https://www.instagram.com/tirththaker11/?hl=en" target="_blank" rel="noopener noreferrer">
+                        <span>Follow for daily updates on BA, product, and AI</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const totalSlides = 3;
+        let activeSlide = 0;
+        let carouselTimer;
+
+        function renderCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const dots = document.querySelectorAll('.dot');
+            if (!track) return;
+
+            track.style.transform = `translateX(-${activeSlide * 100}%)`;
+            dots.forEach((dot, index) => dot.classList.toggle('active', index === activeSlide));
+        }
+
+        function goToSlide(index) {
+            activeSlide = (index + totalSlides) % totalSlides;
+            renderCarousel();
+            restartCarousel();
+        }
+
+        function nextSlide() {
+            goToSlide(activeSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(activeSlide - 1);
+        }
+
+        function startCarousel() {
+            carouselTimer = window.setInterval(() => {
+                activeSlide = (activeSlide + 1) % totalSlides;
+                renderCarousel();
+            }, 5000);
+        }
+
+        function restartCarousel() {
+            window.clearInterval(carouselTimer);
+            startCarousel();
+        }
+
+        renderCarousel();
+        startCarousel();
+    </script>
+</body>
+</html>

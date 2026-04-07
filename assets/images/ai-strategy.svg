@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="AI Strategy">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg3)"/>
+  <g stroke="rgba(255,255,255,.42)" stroke-width="3" fill="none">
+    <path d="M140 560 L360 360 L560 430 L760 250 L1040 330"/>
+    <circle cx="360" cy="360" r="10" fill="white"/>
+    <circle cx="560" cy="430" r="10" fill="white"/>
+    <circle cx="760" cy="250" r="10" fill="white"/>
+    <circle cx="1040" cy="330" r="10" fill="white"/>
+  </g>
+  <text x="80" y="120" fill="white" font-family="Segoe UI, Arial" font-size="56" font-weight="700">Modern Product Strategy</text>
+  <text x="80" y="185" fill="rgba(255,255,255,.92)" font-family="Segoe UI, Arial" font-size="28">Human Judgment + AI Assistance</text>
+</svg>
