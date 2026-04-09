@@ -3,533 +3,499 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tirth Thaker - Business Analyst and Product Management professional with expertise in Agile delivery, requirements gathering, and enterprise software solutions.">
-    <title>Tirth Thaker | Business Analyst & Product Management</title>
+    <meta name="description" content="Tirth Hareshkumar Thaker - Product Manager, Senior Business Analyst with 4+ years of experience in BFSI, Cybersecurity, PAM, MFA, EPM. Based in Mumbai, India.">
+    <title>Tirth Thaker | Product Manager & Business Analyst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #eef5ff;
-            --bg-alt: #f7fbff;
-            --card: rgba(255, 255, 255, 0.78);
-            --card-border: rgba(15, 23, 42, 0.08);
-            --text: #13213c;
-            --muted: #5e6b84;
-            --accent: #2563eb;
-            --accent-2: #14b8a6;
-            --accent-3: #f97316;
-            --shadow: 0 22px 60px rgba(37, 99, 235, 0.10);
+            --bg: #f8f9fc;
+            --bg-alt: #f0f2f8;
+            --surface: rgba(255,255,255,0.85);
+            --surface-hover: rgba(255,255,255,0.95);
+            --card: rgba(255,255,255,0.75);
+            --card-border: rgba(0,0,0,0.06);
+            --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            --text: #1a1d2e;
+            --text-secondary: #555b70;
+            --muted: #8891a5;
+            --accent: #4f46e5;
+            --accent-light: #eef2ff;
+            --accent-glow: rgba(79,70,229,0.15);
+            --teal: #0d9488;
+            --teal-light: #f0fdfa;
+            --teal-glow: rgba(13,148,136,0.12);
+            --amber: #d97706;
+            --amber-light: #fffbeb;
+            --rose: #e11d48;
+            --rose-light: #fff1f2;
+            --purple: #7c3aed;
+            --purple-light: #f5f3ff;
+            --shadow: 0 24px 64px rgba(0,0,0,0.08);
+            --radius: 20px;
+            --radius-sm: 14px;
         }
-
-        * { box-sizing: border-box; }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-
         body {
-            margin: 0;
-            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--text);
-            background:
-                radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 26%),
-                radial-gradient(circle at top right, rgba(20, 184, 166, 0.12), transparent 22%),
-                radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.10), transparent 24%),
-                linear-gradient(180deg, var(--bg), var(--bg-alt) 100%);
+            background: var(--bg);
             min-height: 100vh;
+            overflow-x: hidden;
         }
-
+        /* Animated background blobs */
+        body::before {
+            content: '';
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background:
+                radial-gradient(ellipse 700px 500px at 10% 5%, rgba(79,70,229,0.07), transparent),
+                radial-gradient(ellipse 600px 400px at 90% 15%, rgba(13,148,136,0.06), transparent),
+                radial-gradient(ellipse 500px 400px at 40% 85%, rgba(217,119,6,0.05), transparent),
+                radial-gradient(ellipse 400px 300px at 70% 70%, rgba(124,58,237,0.04), transparent);
+            animation: bgShift 25s ease-in-out infinite alternate;
+        }
+        @keyframes bgShift {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
         a { color: inherit; text-decoration: none; }
 
-        .page {
-            width: min(1180px, calc(100% - 32px));
-            margin: 0 auto;
-            padding: 28px 0 56px;
-        }
+        .page { position: relative; z-index: 1; width: min(1200px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 64px; }
 
+        /* ── NAV ── */
         .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 28px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 14px 24px; margin-bottom: 28px;
+            background: rgba(255,255,255,0.7); border: 1px solid var(--card-border);
+            border-radius: var(--radius); backdrop-filter: blur(20px);
+            box-shadow: 0 2px 16px rgba(0,0,0,0.04);
         }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-        }
-
+        .brand { display: flex; align-items: center; gap: 14px; }
         .brand-mark {
-            width: 44px;
-            height: 44px;
-            display: grid;
-            place-items: center;
-            border-radius: 14px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            color: #ffffff;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.22);
+            width: 46px; height: 46px; display: grid; place-items: center;
+            border-radius: 14px; font-weight: 800; font-size: 1.1rem; color: #fff;
+            background: linear-gradient(135deg, var(--accent), var(--teal));
+            box-shadow: 0 6px 20px var(--accent-glow);
+            animation: pulse-glow 3s ease-in-out infinite;
         }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            color: var(--muted);
-            font-size: 0.95rem;
+        @keyframes pulse-glow {
+            0%,100% { box-shadow: 0 6px 20px var(--accent-glow); }
+            50% { box-shadow: 0 8px 28px rgba(79,70,229,0.25); }
         }
-
-        .nav-links a:hover { color: var(--text); }
-
-        .hero {
-            display: grid;
-            grid-template-columns: 1.45fr 0.95fr;
-            gap: 24px;
-            align-items: stretch;
+        .brand-name { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+        .brand-title { color: var(--muted); font-size: 0.82rem; font-weight: 500; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 4px; }
+        .nav-links a {
+            padding: 8px 16px; border-radius: 10px; font-size: 0.88rem; font-weight: 500;
+            color: var(--text-secondary); transition: all 0.2s;
         }
+        .nav-links a:hover { color: var(--accent); background: var(--accent-light); }
 
+        /* ── PANELS ── */
         .panel {
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: 28px;
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(16px);
-            transition: transform 0.22s ease, box-shadow 0.22s ease;
+            background: var(--card); border: 1px solid var(--card-border);
+            border-radius: var(--radius); backdrop-filter: blur(16px);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .panel:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: rgba(79,70,229,0.12); }
+
+        /* ── HERO ── */
+        .hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: stretch; margin-bottom: 24px; }
+        .hero-main { padding: 44px; position: relative; overflow: hidden; }
+        .hero-main::before {
+            content: ''; position: absolute; top: -60px; right: -60px;
+            width: 250px; height: 250px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(79,70,229,0.08), transparent 70%);
+            pointer-events: none;
         }
 
-        .panel:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 26px 60px rgba(20, 44, 88, 0.12);
+        .hero-intro { display: flex; align-items: center; gap: 24px; margin-bottom: 28px; }
+        .hero-photo {
+            width: 110px; height: 110px; border-radius: 24px; object-fit: cover;
+            border: 3px solid rgba(79,70,229,0.15);
+            box-shadow: 0 8px 28px rgba(79,70,229,0.12);
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .hero-main {
-            padding: 36px;
+        .hero-photo:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 12px 36px rgba(79,70,229,0.2);
+        }
+        .hero-name-block { display: flex; flex-direction: column; gap: 6px; }
+        .hero-name {
+            font-size: 2rem; font-weight: 900; letter-spacing: -0.03em; line-height: 1.15;
+            color: var(--text);
+        }
+        .hero-location {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.88rem; color: var(--muted); font-weight: 500;
+        }
+        .hero-titles {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;
+        }
+        .hero-title-tag {
+            padding: 4px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 600;
+            background: var(--accent-light); color: var(--accent); border: 1px solid rgba(79,70,229,0.12);
         }
 
         .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 14px;
-            border: 1px solid rgba(255, 255, 255, 0.10);
-            border-radius: 999px;
-            color: var(--muted);
-            font-size: 0.9rem;
-            background: rgba(255, 255, 255, 0.03);
+            display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px;
+            border-radius: 999px; font-size: 0.85rem; font-weight: 500;
+            color: var(--teal); background: var(--teal-light);
+            border: 1px solid rgba(13,148,136,0.15);
+            animation: fadeInUp 0.6s ease-out;
+            margin-bottom: 16px;
         }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
         h1 {
-            margin: 18px 0 14px;
-            font-size: clamp(2.5rem, 5vw, 4.8rem);
-            line-height: 1.02;
-            letter-spacing: -0.04em;
+            margin: 0 0 18px; font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            line-height: 1.15; letter-spacing: -0.03em; font-weight: 800;
+            animation: fadeInUp 0.7s ease-out 0.1s both;
         }
-
-        .subtitle {
-            margin: 0 0 24px;
-            color: var(--muted);
-            font-size: 1.08rem;
-            line-height: 1.8;
-            max-width: 68ch;
+        h1 .gradient-text {
+            background: linear-gradient(135deg, var(--accent), var(--teal), var(--purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-size: 200% 200%; animation: gradientMove 4s ease infinite;
         }
+        @keyframes gradientMove { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
-        .cta-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 26px 0 0;
+        .subtitle { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.8; max-width: 64ch; animation: fadeInUp 0.8s ease-out 0.2s both; }
+
+        /* Social Links Row */
+        .social-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; animation: fadeInUp 0.9s ease-out 0.3s both; }
+        .social-btn {
+            display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px;
+            border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem;
+            border: 1px solid transparent; transition: all 0.25s ease; cursor: pointer;
+            text-decoration: none;
         }
+        .social-btn:hover { transform: translateY(-2px); }
+        .social-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 18px;
-            border-radius: 14px;
-            font-weight: 600;
-            border: 1px solid transparent;
-            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        .social-linkedin {
+            background: #0077b5; color: #fff;
+            box-shadow: 0 6px 20px rgba(0,119,181,0.25);
         }
+        .social-linkedin:hover { box-shadow: 0 10px 28px rgba(0,119,181,0.35); background: #006097; }
 
-        .btn:hover { transform: translateY(-1px); }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            color: #ffffff;
+        .social-topmate {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff;
+            box-shadow: 0 6px 20px rgba(99,102,241,0.25);
         }
+        .social-topmate:hover { box-shadow: 0 10px 28px rgba(99,102,241,0.35); }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(255, 255, 255, 0.12);
-            color: var(--text);
+        .social-instagram {
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: #fff; box-shadow: 0 6px 20px rgba(225,29,72,0.2);
         }
+        .social-instagram:hover { box-shadow: 0 10px 28px rgba(225,29,72,0.3); }
 
-        .hero-side {
-            padding: 24px;
-            display: grid;
-            gap: 16px;
-        }
+        /* Hero Side */
+        .hero-side { padding: 24px; display: grid; gap: 16px; align-content: start; }
+        .profile-card { padding: 24px; border-radius: 18px; background: linear-gradient(135deg, var(--accent-light), var(--teal-light)); border: 1px solid var(--card-border); }
+        .profile-card h2 { font-size: 1.2rem; margin-bottom: 8px; font-weight: 700; color: var(--text); }
+        .note { color: var(--text-secondary); line-height: 1.6; font-size: 0.9rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+        .tag { padding: 6px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; background: rgba(79,70,229,0.08); border: 1px solid rgba(79,70,229,0.12); color: var(--accent); }
 
-        .profile-card {
-            padding: 24px;
-            border-radius: 22px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .profile-pic {
-            width: 74px;
-            height: 74px;
-            border-radius: 22px;
-            background: linear-gradient(135deg, var(--accent-3), var(--accent));
-            display: grid;
-            place-items: center;
-            color: #04111f;
-            font-weight: 800;
-            font-size: 1.4rem;
-            margin-bottom: 14px;
-        }
-
-        .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
-        }
-
+        .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
         .stat {
-            padding: 16px;
-            border-radius: 18px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
+            padding: 18px; border-radius: 16px; background: rgba(255,255,255,0.9);
+            border: 1px solid var(--card-border); transition: all 0.25s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
-
+        .stat:hover { border-color: rgba(79,70,229,0.2); box-shadow: 0 6px 20px rgba(79,70,229,0.08); }
         .stat strong {
-            display: block;
-            font-size: 1.3rem;
-            margin-bottom: 6px;
+            display: block; font-size: 1.15rem; margin-bottom: 4px; font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--teal));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+        .stat span { color: var(--text-secondary); font-size: 0.82rem; line-height: 1.5; }
 
-        .stat span { color: var(--muted); font-size: 0.92rem; line-height: 1.45; }
-
-        .section {
-            margin-top: 24px;
-            padding: 28px;
+        /* ── NEWS CAROUSEL ── */
+        .news-section { margin-bottom: 28px; }
+        .news-section .panel { padding: 28px; }
+        .carousel-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+        .carousel-header h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
+        .carousel-header h2 span { background: linear-gradient(135deg, var(--accent), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .carousel-subtitle { color: var(--muted); font-size: 0.92rem; margin-top: 4px; }
+        .carousel-date {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--teal);
+            background: var(--teal-light); padding: 6px 14px; border-radius: 999px;
+            border: 1px solid rgba(13,148,136,0.15); white-space: nowrap;
         }
-
-        .section h2 {
-            margin: 0 0 12px;
-            font-size: 1.7rem;
+        .cat-tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+        .cat-tab {
+            padding: 8px 18px; border-radius: 999px; font-size: 0.84rem; font-weight: 600;
+            border: 1px solid var(--card-border); background: transparent; color: var(--text-secondary);
+            cursor: pointer; transition: all 0.2s;
         }
+        .cat-tab:hover { border-color: rgba(79,70,229,0.3); color: var(--accent); }
+        .cat-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+        .cat-tab[data-cat="pm"].active { background: var(--amber); border-color: var(--amber); color: #fff; }
+        .cat-tab[data-cat="tech"].active { background: var(--teal); border-color: var(--teal); color: #fff; }
 
-        .section p.lead {
-            margin: 0 0 20px;
-            color: var(--muted);
-            line-height: 1.8;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .feature, .info-card {
-            padding: 20px;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .feature:hover, .info-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 38px rgba(17, 40, 84, 0.08);
-        }
-
-        .feature h3, .info-card h3 {
-            margin: 0 0 10px;
-            font-size: 1.05rem;
-        }
-
-        .feature p, .info-card p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 16px;
-        }
-
-        .tag {
-            padding: 9px 12px;
-            border-radius: 999px;
-            background: rgba(37, 99, 235, 0.08);
-            border: 1px solid rgba(37, 99, 235, 0.12);
-            color: #214b9a;
-            font-size: 0.92rem;
-        }
-
-        .timeline {
-            display: grid;
-            gap: 14px;
-        }
-
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 16px;
-            align-items: start;
-            padding: 18px 20px;
-            border-radius: 18px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .timeline-item small {
-            color: var(--muted);
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .badge {
-            white-space: nowrap;
-            padding: 8px 12px;
-            border-radius: 999px;
-            background: rgba(20, 184, 166, 0.10);
-            border: 1px solid rgba(20, 184, 166, 0.18);
-            color: #0f766e;
-            font-size: 0.88rem;
-        }
-
-        .footer-cta {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 16px;
-            margin-top: 24px;
-        }
-
-        .connect-card {
-            padding: 24px;
-            border-radius: 22px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.10), rgba(20, 184, 166, 0.10));
-            border: 1px solid rgba(255,255,255,0.10);
-        }
-
-        .connect-list {
-            display: grid;
-            gap: 12px;
-            margin-top: 18px;
-        }
-
-        .connect-link {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            padding: 14px 16px;
-            border-radius: 16px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .connect-link span:last-child { color: var(--muted); }
-
-        .carousel {
-            margin-top: 24px;
-            padding: 28px;
-        }
-
-        .carousel-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 18px;
-        }
-
-        .carousel-controls {
-            display: flex;
-            gap: 10px;
-        }
-
-        .icon-btn {
-            width: 44px;
-            height: 44px;
-            display: grid;
-            place-items: center;
-            border: 1px solid rgba(37, 99, 235, 0.16);
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.72);
-            color: var(--text);
-            cursor: pointer;
-            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-        }
-
-        .icon-btn:hover { border-color: rgba(37, 99, 235, 0.3); }        git remote set-url origin https://github.com/Tirth11/tirth-bio-website.git
-        git push -u origin main
-
-        .carousel-window {
-            overflow: hidden;
-            border-radius: 24px;
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.45s ease;
-        }
-
+        .carousel-window { overflow: hidden; border-radius: 18px; }
+        .carousel-track { display: flex; transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); }
         .carousel-slide {
-            min-width: 100%;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 18px;
-            padding: 22px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(20, 184, 166, 0.05));
-            border: 1px solid rgba(37, 99, 235, 0.10);
+            min-width: 100%; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 18px;
+            padding: 24px; background: linear-gradient(135deg, rgba(79,70,229,0.03), rgba(13,148,136,0.03));
+            border: 1px solid var(--card-border); border-radius: 18px;
         }
-
-        .news-card, .quote-card {
-            padding: 22px;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.82);
-            border: 1px solid rgba(15, 23, 42, 0.08);
-        }
-
-        .slide-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 14px;
-            margin-bottom: 14px;
-            border: 1px solid rgba(15, 23, 42, 0.08);
-        }
-
+        .news-card { padding: 24px; border-radius: 18px; background: rgba(255,255,255,0.7); border: 1px solid var(--card-border); }
         .news-kicker {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 0.88rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
+            display: inline-flex; align-items: center; gap: 8px; font-size: 0.78rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
         }
-
-        .news-card h3 {
-            margin: 12px 0 10px;
-            font-size: 1.35rem;
-        }
-
-        .news-card p, .quote-card p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.75;
-        }
-
+        .kicker-ai { color: var(--accent); background: var(--accent-light); }
+        .kicker-pm { color: var(--amber); background: var(--amber-light); }
+        .kicker-tech { color: var(--teal); background: var(--teal-light); }
+        .news-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; line-height: 1.35; letter-spacing: -0.01em; color: var(--text); }
+        .news-card p { color: var(--text-secondary); line-height: 1.75; font-size: 0.9rem; }
+        .news-meta { display: flex; gap: 12px; margin-top: 14px; font-size: 0.8rem; color: var(--muted); }
         .quote-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 16px;
-            background: linear-gradient(180deg, rgba(37, 99, 235, 0.08), rgba(20, 184, 166, 0.08));
+            padding: 24px; border-radius: 18px; display: flex; flex-direction: column;
+            justify-content: space-between; gap: 16px;
+            background: linear-gradient(180deg, var(--accent-light), var(--teal-light));
+            border: 1px solid var(--card-border);
+        }
+        .quote-mark { font-size: 4rem; line-height: 1; background: linear-gradient(135deg, var(--accent), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .quote-card p { color: var(--text-secondary); line-height: 1.75; font-size: 1rem; font-style: italic; }
+        .quote-author { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .quote-author span:first-child { font-weight: 700; color: var(--text); }
+        .badge {
+            padding: 6px 14px; border-radius: 999px; font-size: 0.78rem; font-weight: 600;
+            background: var(--teal-light); border: 1px solid rgba(13,148,136,0.15); color: var(--teal);
         }
 
-        .quote-mark {
-            font-size: 3rem;
-            line-height: 1;
-            color: rgba(37, 99, 235, 0.18);
-            margin-bottom: -8px;
+        .carousel-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+        .carousel-dots { display: flex; gap: 8px; }
+        .dot { width: 10px; height: 10px; border-radius: 999px; border: 0; background: rgba(0,0,0,0.12); cursor: pointer; transition: all 0.3s; }
+        .dot.active { background: var(--accent); width: 32px; box-shadow: 0 0 12px var(--accent-glow); }
+        .carousel-controls { display: flex; gap: 8px; }
+        .icon-btn {
+            width: 42px; height: 42px; display: grid; place-items: center;
+            border: 1px solid var(--card-border); border-radius: 12px;
+            background: rgba(255,255,255,0.8); color: var(--text); cursor: pointer; font-size: 1.1rem;
+            transition: all 0.2s;
         }
+        .icon-btn:hover { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
 
-        .quote-author {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            color: var(--text);
-            font-weight: 700;
+        /* ── SECTIONS ── */
+        .section { margin-bottom: 24px; padding: 36px; }
+        .section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; color: var(--text); }
+        .section h2 .accent { color: var(--accent); }
+        .lead { color: var(--text-secondary); line-height: 1.8; margin-bottom: 22px; font-size: 0.95rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .feature, .info-card {
+            padding: 24px; border-radius: 18px; background: rgba(255,255,255,0.85);
+            border: 1px solid var(--card-border); transition: all 0.25s; position: relative; overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 16px;
+        .feature::before, .info-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--teal)); opacity: 0; transition: opacity 0.3s;
         }
+        .feature:hover::before, .info-card:hover::before { opacity: 1; }
+        .feature:hover, .info-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); border-color: rgba(79,70,229,0.15); }
+        .feature h3, .info-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+        .feature p, .info-card p { color: var(--text-secondary); line-height: 1.75; font-size: 0.9rem; }
+        .feature .icon { font-size: 1.8rem; margin-bottom: 12px; display: block; }
 
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 999px;
-            border: 0;
-            background: rgba(37, 99, 235, 0.22);
-            cursor: pointer;
+        /* ── EXPERIENCE ── */
+        .exp-card {
+            padding: 28px; border-radius: 18px; background: rgba(255,255,255,0.85);
+            border: 1px solid var(--card-border); margin-bottom: 16px;
+            transition: all 0.25s; position: relative; overflow: hidden;
         }
-
-        .dot.active { background: var(--accent); width: 28px; }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 14px;
+        .exp-card::before {
+            content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+            background: linear-gradient(180deg, var(--accent), var(--teal)); border-radius: 4px 0 0 4px;
         }
+        .exp-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.08); border-color: rgba(79,70,229,0.15); }
+        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+        .exp-company { font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+        .exp-role { font-size: 1.15rem; font-weight: 800; color: var(--text); }
+        .exp-meta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .exp-meta-tag {
+            padding: 5px 14px; border-radius: 999px; font-size: 0.78rem; font-weight: 600;
+            background: var(--accent-light); color: var(--accent); border: 1px solid rgba(79,70,229,0.1);
+        }
+        .exp-bullets { list-style: none; padding: 0; display: grid; gap: 10px; }
+        .exp-bullets li {
+            padding-left: 20px; position: relative; color: var(--text-secondary);
+            line-height: 1.7; font-size: 0.9rem;
+        }
+        .exp-bullets li::before {
+            content: ''; position: absolute; left: 0; top: 10px;
+            width: 8px; height: 8px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--teal));
+        }
+        .achievements-box {
+            margin-top: 18px; padding: 20px; border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent-light), var(--teal-light));
+            border: 1px solid rgba(79,70,229,0.08);
+        }
+        .achievements-box h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; color: var(--accent); }
+        .achievements-box li::before { background: var(--amber) !important; }
 
+        /* Timeline & Certs */
+        .timeline { display: grid; gap: 14px; }
+        .timeline-item {
+            display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: start;
+            padding: 22px; border-radius: 18px; background: rgba(255,255,255,0.85);
+            border: 1px solid var(--card-border); transition: all 0.2s;
+        }
+        .timeline-item:hover { border-color: rgba(79,70,229,0.2); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+        .timeline-item small { color: var(--muted); display: block; margin-bottom: 6px; font-size: 0.85rem; }
+        .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
         .cert-card {
-            padding: 18px;
-            border-radius: 16px;
-            border: 1px solid rgba(37, 99, 235, 0.14);
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), rgba(20, 184, 166, 0.04));
-            display: grid;
-            gap: 10px;
-            align-content: start;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            padding: 22px; border-radius: 18px; border: 1px solid var(--card-border);
+            background: rgba(255,255,255,0.85); display: grid; gap: 10px; align-content: start;
+            transition: all 0.25s; position: relative; overflow: hidden;
+        }
+        .cert-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); border-color: rgba(79,70,229,0.15); }
+        .cert-card small { color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; }
+        .cert-card h3 { font-size: 0.98rem; line-height: 1.45; font-weight: 600; color: var(--text); }
+
+        /* Domain Highlights */
+        .domain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .domain-card {
+            padding: 24px; border-radius: 18px; position: relative; overflow: hidden;
+            border: 1px solid var(--card-border); transition: all 0.25s;
+        }
+        .domain-card:nth-child(1) { background: linear-gradient(135deg, var(--accent-light), rgba(255,255,255,0.85)); }
+        .domain-card:nth-child(2) { background: linear-gradient(135deg, var(--teal-light), rgba(255,255,255,0.85)); }
+        .domain-card:nth-child(3) { background: linear-gradient(135deg, var(--amber-light), rgba(255,255,255,0.85)); }
+        .domain-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+        .domain-card .icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+        .domain-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+        .domain-card p { color: var(--text-secondary); line-height: 1.75; font-size: 0.88rem; }
+
+        /* Clients strip */
+        .clients-strip {
+            margin-top: 18px; padding: 18px 24px; border-radius: 14px;
+            background: linear-gradient(135deg, rgba(79,70,229,0.04), rgba(13,148,136,0.04));
+            border: 1px solid var(--card-border);
+            display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+        }
+        .clients-strip span { font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+        .client-logo {
+            padding: 6px 16px; border-radius: 999px; font-size: 0.82rem; font-weight: 700;
+            background: rgba(255,255,255,0.85); border: 1px solid var(--card-border); color: var(--text);
         }
 
-        .cert-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 36px rgba(20, 44, 88, 0.10);
+        /* Footer CTA */
+        .footer-cta { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; }
+        .connect-card {
+            padding: 32px; border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--accent-light), var(--teal-light));
+            border: 1px solid var(--card-border);
         }
+        .connect-list { display: grid; gap: 10px; margin-top: 18px; }
+        .connect-link {
+            display: flex; justify-content: space-between; align-items: center; gap: 16px;
+            padding: 14px 18px; border-radius: 14px; background: rgba(255,255,255,0.8);
+            border: 1px solid var(--card-border); transition: all 0.2s;
+        }
+        .connect-link:hover { border-color: rgba(79,70,229,0.2); background: rgba(255,255,255,0.95); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+        .connect-link span:last-child { color: var(--accent); }
+        .connect-link svg { width: 18px; height: 18px; color: var(--accent); }
 
-        .cert-card small {
-            color: var(--muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
+        .footer-bottom {
+            margin-top: 32px; padding: 24px; text-align: center;
+            background: rgba(255,255,255,0.6); border-radius: var(--radius);
+            border: 1px solid var(--card-border); backdrop-filter: blur(10px);
         }
+        .footer-bottom p { color: var(--muted); font-size: 0.85rem; }
+        .footer-bottom a { color: var(--accent); font-weight: 600; }
 
-        .cert-card h3 {
-            margin: 0;
-            font-size: 1.05rem;
-            line-height: 1.45;
+        /* ── LIVE NEWS FEED ── */
+        .live-news-section { margin-bottom: 28px; }
+        .live-news-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+        .live-news-header h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; }
+        .live-news-header h2 span { background: linear-gradient(135deg, var(--accent), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .live-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; background: var(--rose-light); color: var(--rose); border: 1px solid rgba(225,29,72,0.15); animation: livePulse 2s ease-in-out infinite; }
+        .live-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--rose); animation: liveDot 1.5s ease-in-out infinite; }
+        @keyframes livePulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
+        @keyframes liveDot { 0%,100% { transform: scale(1); } 50% { transform: scale(1.4); } }
+        .news-feed-tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+        .feed-tab {
+            padding: 8px 18px; border-radius: 999px; font-size: 0.84rem; font-weight: 600;
+            border: 1px solid var(--card-border); background: transparent; color: var(--text-secondary);
+            cursor: pointer; transition: all 0.2s;
         }
-
-        .note {
-            color: var(--muted);
-            line-height: 1.7;
-            margin: 0;
+        .feed-tab:hover { border-color: rgba(79,70,229,0.3); color: var(--accent); }
+        .feed-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+        .feed-tab[data-feed="pm"].active { background: var(--amber); border-color: var(--amber); color: #fff; }
+        .feed-tab[data-feed="tech"].active { background: var(--teal); border-color: var(--teal); color: #fff; }
+        .news-feed-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
         }
+        .live-article {
+            padding: 24px; border-radius: 18px; background: rgba(255,255,255,0.85);
+            border: 1px solid var(--card-border); transition: all 0.25s;
+            display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden;
+        }
+        .live-article::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--teal)); opacity: 0; transition: opacity 0.3s;
+        }
+        .live-article:hover::before { opacity: 1; }
+        .live-article:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); border-color: rgba(79,70,229,0.15); }
+        .live-article .feed-source {
+            font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+            color: var(--accent); display: flex; align-items: center; gap: 6px;
+        }
+        .live-article .feed-source .source-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+        .live-article h3 { font-size: 1rem; font-weight: 700; line-height: 1.4; color: var(--text); }
+        .live-article h3 a { color: inherit; text-decoration: none; transition: color 0.2s; }
+        .live-article h3 a:hover { color: var(--accent); }
+        .live-article .feed-date { font-size: 0.8rem; color: var(--muted); margin-top: auto; }
+        .feed-loading {
+            grid-column: 1 / -1; text-align: center; padding: 48px 24px;
+            color: var(--muted); font-size: 0.95rem;
+        }
+        .feed-loading .spinner {
+            width: 36px; height: 36px; border: 3px solid var(--card-border); border-top-color: var(--accent);
+            border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .feed-error {
+            grid-column: 1 / -1; text-align: center; padding: 40px 24px;
+            color: var(--muted); font-size: 0.9rem; background: var(--accent-light);
+            border-radius: 14px; border: 1px solid var(--card-border);
+        }
+        .last-updated { font-size: 0.78rem; color: var(--muted); font-style: italic; margin-top: 12px; text-align: right; }
 
         @media (max-width: 960px) {
-            .hero, .footer-cta, .grid-3 { grid-template-columns: 1fr; }
-            .nav { flex-direction: column; align-items: flex-start; }
-            .timeline-item { grid-template-columns: 1fr; }
-            .carousel-slide { grid-template-columns: 1fr; }
-            .cert-grid { grid-template-columns: 1fr; }
+            .news-feed-grid { grid-template-columns: 1fr; }
         }
 
+        /* Responsive */
+        @media (max-width: 960px) {
+            .hero, .footer-cta, .grid-3, .domain-grid { grid-template-columns: 1fr; }
+            .nav { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .carousel-slide { grid-template-columns: 1fr; }
+            .cert-grid, .stat-grid { grid-template-columns: 1fr; }
+            .timeline-item { grid-template-columns: 1fr; }
+            .hero-intro { flex-direction: column; text-align: center; }
+            .hero-titles { justify-content: center; }
+            .social-row { justify-content: center; }
+        }
         @media (max-width: 640px) {
-            .page { width: min(100% - 20px, 100%); padding-top: 16px; }
-            .hero-main, .section, .hero-side { padding: 20px; }
-            .carousel { padding: 20px; }
-            h1 { font-size: 2.3rem; }
-            .stat-grid { grid-template-columns: 1fr; }
-            .btn { width: 100%; }
+            .page { width: calc(100% - 16px); }
+            .hero-main, .section { padding: 22px; }
+            h1 { font-size: 1.6rem; }
+            .social-btn { width: 100%; justify-content: center; }
+            .carousel-header { flex-direction: column; }
+            .hero-name { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -539,402 +505,595 @@
             <div class="brand">
                 <div class="brand-mark">T</div>
                 <div>
-                    <div>Tirth Thaker</div>
-                    <small style="color: var(--muted); font-weight: 500;">Business Analyst • Product Management</small>
+                    <div class="brand-name">Tirth Thaker</div>
+                    <div class="brand-title">Product Manager • Business Analyst • BFSI</div>
                 </div>
             </div>
             <nav class="nav-links" aria-label="Primary">
-                <a href="#ai-news">AI Highlights</a>
                 <a href="#about">About</a>
+                <a href="#experience">Experience</a>
                 <a href="#expertise">Expertise</a>
+                <a href="#domains">Domains</a>
                 <a href="#certifications">Certifications</a>
-                <a href="#education">Education</a>
                 <a href="#connect">Connect</a>
+                <a href="#daily-news">Insights</a>
+                <a href="#live-feed">Live News</a>
             </nav>
         </header>
 
-        <section class="panel section carousel" id="ai-news">
-            <div class="carousel-head">
-                <div>
-                    <h2 style="margin-bottom: 8px;">AI News, Product Insights, And Quotes</h2>
-                    <p class="lead" style="margin-bottom: 0;">A friendly carousel for quick updates on how AI is changing the way we build, manage, and think about products.</p>
-                </div>
-                <div class="carousel-controls">
-                    <button class="icon-btn" type="button" aria-label="Previous slide" onclick="prevSlide()">‹</button>
-                    <button class="icon-btn" type="button" aria-label="Next slide" onclick="nextSlide()">›</button>
-                </div>
-            </div>
-
-            <div class="carousel-window">
-                <div class="carousel-track" id="carouselTrack">
-                    <article class="carousel-slide">
-                        <div class="news-card">
-                            <img class="slide-image" src="./assets/images/ai-revolution.svg" alt="Abstract AI visualization with glowing neural network lights" loading="lazy">
-                            <div class="news-kicker">AI Revolution</div>
-                            <h3>How AI Is Revolutionizing Industries</h3>
-                            <p>
-                                AI is helping teams automate repetitive work, analyze data faster, personalize user experiences, and make smarter decisions.
-                                From customer support to operations, businesses are using AI to move quicker and work more intelligently.
-                            </p>
-                        </div>
-                        <div class="quote-card">
-                            <div>
-                                <div class="quote-mark">“</div>
-                                <p>
-                                    "Artificial intelligence is the new electricity."
-                                </p>
-                            </div>
-                            <div class="quote-author">
-                                <span>Andrew Ng</span>
-                                <span class="badge">AI Thought Leader</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="carousel-slide">
-                        <div class="news-card">
-                            <img class="slide-image" src="./assets/images/ai-product-management.svg" alt="Digital illustration representing AI for product management" loading="lazy">
-                            <div class="news-kicker">AI For Product Management</div>
-                            <h3>AI Is Becoming A Product Manager’s Best Co-Pilot</h3>
-                            <p>
-                                Product teams are using AI for requirement discovery, user feedback analysis, roadmap ideas, backlog prioritization, and faster documentation.
-                                That means more time for strategy, user empathy, and high-impact product thinking.
-                            </p>
-                        </div>
-                        <div class="quote-card">
-                            <div>
-                                <div class="quote-mark">“</div>
-                                <p>
-                                    "AI is one of the most important things humanity is working on."
-                                </p>
-                            </div>
-                            <div class="quote-author">
-                                <span>Sundar Pichai</span>
-                                <span class="badge">Google CEO</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="carousel-slide">
-                        <div class="news-card">
-                            <img class="slide-image" src="./assets/images/ai-strategy.svg" alt="Futuristic illustration representing AI powered strategic decisions" loading="lazy">
-                            <div class="news-kicker">Product + AI Thinking</div>
-                            <h3>Why AI Matters For Modern Product Strategy</h3>
-                            <p>
-                                The best product teams are combining human judgment with AI support to improve discovery, speed up insights, and design better
-                                experiences. In product management, AI is less about replacing people and more about empowering people.
-                            </p>
-                        </div>
-                        <div class="quote-card">
-                            <div>
-                                <div class="quote-mark">“</div>
-                                <p>
-                                    "The best way to predict the future is to invent it."
-                                </p>
-                            </div>
-                            <div class="quote-author">
-                                <span>Alan Kay</span>
-                                <span class="badge">Computer Scientist</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <div class="carousel-dots" aria-label="Carousel navigation">
-                <button class="dot active" type="button" aria-label="Slide 1" onclick="goToSlide(0)"></button>
-                <button class="dot" type="button" aria-label="Slide 2" onclick="goToSlide(1)"></button>
-                <button class="dot" type="button" aria-label="Slide 3" onclick="goToSlide(2)"></button>
-            </div>
-        </section>
-
+        <!-- ── HERO ── -->
         <section class="hero">
             <div class="panel hero-main">
-                <div class="eyebrow">📌 Available for collaboration, product discussions, and BA mentorship</div>
-                <h1>Business Analyst & Product Management professional helping teams build better products.</h1>
-                <p class="subtitle">
-                    I’m Tirth Thaker — a results-driven Business Analyst and Product Management professional with 4+ years of experience in requirement gathering,
-                    product lifecycle management, stakeholder collaboration, Agile delivery, UAT, and process improvement. I help transform business needs into clear
-                    documentation, practical roadmaps, and scalable product outcomes.
-                </p>
-                <p class="subtitle">
-                    My work spans BFSI, cybersecurity, identity and access management, privileged access management, multi-factor authentication, endpoint privilege
-                    management, and role-based access control — with a strong focus on turning complexity into clarity.
-                </p>
+                <div class="hero-intro">
+                    <img src="assets/images/tirth-profile.jpg" alt="Tirth Thaker - Product Manager & Business Analyst" class="hero-photo" id="heroPhoto">
+                    <div class="hero-name-block">
+                        <div class="hero-name">Tirth Hareshkumar Thaker</div>
+                        <div class="hero-location">📍 Mumbai, India</div>
+                        <div class="hero-titles">
+                            <span class="hero-title-tag">Product Manager</span>
+                            <span class="hero-title-tag">Sr. Business Analyst</span>
+                            <span class="hero-title-tag">BFSI Domain</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="eyebrow">📌 Open to collaborations, consulting & BA mentorship</div>
+                <h1>Turning complex requirements into <span class="gradient-text">clear, scalable</span> digital products.</h1>
+                <p class="subtitle">Results-driven Business Analyst and Product Management professional with <strong>4+ years of experience</strong> in requirement gathering, product lifecycle management, stakeholder management, Agile delivery, UAT, process improvement, and enterprise software solutions across <strong>BFSI and Cybersecurity</strong> domains.</p>
+                <p class="subtitle" style="margin-top:12px;">I specialize in IAM, PAM, MFA, EPM, and RBAC — converting business needs into BRD, FRD, SRS, user stories, and product enhancements that drive customer adoption and business efficiency.</p>
 
-                <div class="cta-row">
-                    <a class="btn btn-primary" href="https://www.linkedin.com/in/tirth-thaker-psm-i-and-pspo-i-trained-416a19185/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
-                    <a class="btn btn-secondary" href="https://topmate.io/tirth_thakerpsm_i_and_psp/" target="_blank" rel="noopener noreferrer">Explore Topmate</a>
-                    <a class="btn btn-secondary" href="https://www.instagram.com/tirththaker11/?hl=en" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+                <div class="social-row">
+                    <a class="social-btn social-linkedin" href="https://www.linkedin.com/in/tirth-thaker-psm-i-and-pspo-i-trained-416a19185/" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a class="social-btn social-topmate" href="https://topmate.io/tirth_thakerpsm_i_and_psp/" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Topmate
+                    </a>
+                    <a class="social-btn social-instagram" href="https://www.instagram.com/tirththaker11/?hl=en" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        Instagram
+                    </a>
                 </div>
             </div>
-
             <aside class="panel hero-side">
                 <div class="profile-card">
-                    <div class="profile-pic">TT</div>
-                    <h2 style="margin: 0 0 8px; font-size: 1.4rem;">Tirth Thaker</h2>
-                    <p class="note">Business Analyst | Product Enthusiast | Agile Practitioner | AI Learner</p>
-                    <div class="tags" aria-label="Highlights">
+                    <h2>👋 Quick Snapshot</h2>
+                    <p class="note">Business Analyst | Product Strategist | Agile Practitioner | BFSI Domain Expert | AI-Enabled Product Thinker</p>
+                    <div class="tags">
                         <span class="tag">Requirements</span>
                         <span class="tag">Product Strategy</span>
-                        <span class="tag">Agile Delivery</span>
+                        <span class="tag">Agile</span>
+                        <span class="tag">BFSI</span>
+                        <span class="tag">Cybersecurity</span>
                         <span class="tag">AI for PM</span>
                     </div>
                 </div>
-
                 <div class="stat-grid">
-                    <div class="stat">
-                        <strong>4+ Years</strong>
-                        <span>Experience in business analysis and product management</span>
-                    </div>
-                    <div class="stat">
-                        <strong>BFSI + Security</strong>
-                        <span>Deep domain exposure across enterprise security workflows</span>
-                    </div>
-                    <div class="stat">
-                        <strong>BRD → UAT</strong>
-                        <span>Strong documentation, process mapping, and validation skills</span>
-                    </div>
-                    <div class="stat">
-                        <strong>AI + Product</strong>
-                        <span>Sharing insights on how AI improves product and business outcomes</span>
-                    </div>
+                    <div class="stat"><strong>4+ Years</strong><span>Business analysis & product delivery</span></div>
+                    <div class="stat"><strong>BFSI + Security</strong><span>PAM, MFA, EPM, RBAC</span></div>
+                    <div class="stat"><strong>BRD → UAT</strong><span>End-to-end requirements lifecycle</span></div>
+                    <div class="stat"><strong>PSM + PSPO</strong><span>Scrum certified professional</span></div>
                 </div>
             </aside>
         </section>
 
+        <!-- ── ABOUT ── -->
         <section class="panel section" id="about">
-            <h2>Who I Am</h2>
-            <p class="lead">
-                I’m passionate about helping organizations build products that are useful, scalable, and aligned to real business needs.
-                I enjoy working at the intersection of business, technology, and user experience — translating ideas into structured requirements and actionable delivery plans.
-            </p>
+            <h2>About <span class="accent">Me</span></h2>
+            <p class="lead">I help organizations build products that are useful, scalable, and aligned with real business needs — translating ideas into structured requirements and delivery-ready plans. With strong domain exposure to BFSI, cybersecurity, identity and access management, and enterprise security solutions, I bring clarity to complex business workflows.</p>
             <div class="grid-3">
-                <div class="feature">
-                    <h3>What I Do</h3>
-                    <p>
-                        I gather requirements, define user stories and acceptance criteria, create BRDs/FRDs/SRS documents, support UAT,
-                        and collaborate with cross-functional teams to ensure smooth delivery.
-                    </p>
-                </div>
-                <div class="feature">
-                    <h3>How I Work</h3>
-                    <p>
-                        I bring a structured, Agile-first mindset to product work — balancing stakeholder goals, feasibility, customer value,
-                        and delivery timelines.
-                    </p>
-                </div>
-                <div class="feature">
-                    <h3>What I Share</h3>
-                    <p>
-                        On Topmate and Instagram, I share guidance around business analysis, product management, AI-driven product thinking,
-                        and career growth in product roles.
-                    </p>
-                </div>
+                <div class="feature"><span class="icon">🎯</span><h3>What I Do</h3><p>Gather requirements, define user stories, prepare BRD/FRD/SRS documentation, coordinate UAT, and collaborate with product, engineering, QA, UX, and client stakeholders for smooth delivery.</p></div>
+                <div class="feature"><span class="icon">⚙️</span><h3>How I Work</h3><p>Structured, Agile-first mindset — balancing stakeholder goals, feasibility, customer value, and release timelines. I work with Scrum, Kanban, sprint planning, backlog grooming, and retrospectives.</p></div>
+                <div class="feature"><span class="icon">💡</span><h3>What I Share</h3><p>On Topmate and Instagram, I share practical guidance on business analysis, product management, AI-enabled product thinking, career growth, and real-world lessons.</p></div>
             </div>
         </section>
 
+        <!-- ── EXPERIENCE ── -->
+        <section class="panel section" id="experience">
+            <h2>Professional <span class="accent">Experience</span></h2>
+            <p class="lead">Building enterprise-grade products across cybersecurity, BFSI, and technology domains.</p>
+
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-company">ARCON Tech Solutions</div>
+                        <div class="exp-role">Business Analyst – Product Management / Cybersecurity</div>
+                    </div>
+                    <div class="exp-meta">
+                        <span class="exp-meta-tag">📍 Mumbai, India</span>
+                        <span class="exp-meta-tag">📅 Jun 2022 – Present</span>
+                    </div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Manage business analysis and product support for enterprise cybersecurity solutions including PAM, MFA, and EPM platforms</li>
+                    <li>Gather & translate business, functional, and client requirements into BRD, FRD, SRS, user stories, use cases, and acceptance criteria</li>
+                    <li>Collaborate with product, engineering, QA, UX, implementation, and client stakeholders to define features and support release execution</li>
+                    <li>Drive backlog prioritization, sprint planning, requirement clarification, and documentation governance in Agile environments</li>
+                    <li>Conduct requirement workshops, discovery sessions, solution walkthroughs, and UAT coordination</li>
+                    <li>Analyze client feedback, product gaps, and usage patterns to identify product improvement opportunities</li>
+                    <li>Work on security and access-related workflows across Windows, macOS, and Linux environments</li>
+                </ul>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul class="exp-bullets">
+                        <li>Delivered enterprise solutions for ICICI Bank, SBI, Vodafone Idea, AMFAM, and NIC</li>
+                        <li>Improved quality of functional documentation and UAT coordination for smoother cross-team alignment</li>
+                        <li>Supported enhancement planning and product benchmarking for MFA and EPM modules</li>
+                        <li>Strengthened stakeholder communication enabling faster decision-making and requirement closure</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-company">Yoliday</div>
+                        <div class="exp-role">Product Manager Intern</div>
+                    </div>
+                    <div class="exp-meta">
+                        <span class="exp-meta-tag">📍 India</span>
+                        <span class="exp-meta-tag">📅 Jan 2022 – May 2022</span>
+                    </div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Supported product strategy, MVP planning, and feature definition for a B2C travel platform</li>
+                    <li>Conducted market research, competitor analysis, user analysis, and feature benchmarking</li>
+                    <li>Designed wireframes and prototypes in Figma to improve search, discovery, and booking flows</li>
+                    <li>Tracked product performance using Zoho Analytics for data-driven decisions</li>
+                    <li>Recommended UX improvements contributing to a <strong>25% reduction in booking drop-off</strong></li>
+                    <li>Conceptualized an AI-based travel assistant for personalized itinerary recommendations</li>
+                </ul>
+            </div>
+
+            <div class="clients-strip">
+                <span>Enterprise Clients:</span>
+                <span class="client-logo">🏦 ICICI Bank</span>
+                <span class="client-logo">🏦 SBI</span>
+                <span class="client-logo">📡 Vodafone Idea</span>
+                <span class="client-logo">🏢 AMFAM</span>
+                <span class="client-logo">🏛️ NIC</span>
+            </div>
+        </section>
+
+        <!-- ── EXPERTISE ── -->
         <section class="panel section" id="expertise">
-            <h2>Core Competencies</h2>
-            <p class="lead">A snapshot of the skills and domains I bring into every project.</p>
-
+            <h2>Core <span class="accent">Competencies</span></h2>
+            <p class="lead">A focused snapshot of the skills and domains I bring to every engagement.</p>
             <div class="grid-3">
-                <div class="info-card">
-                    <h3>Product Management</h3>
-                    <p>Product strategy, roadmap planning, MVP definition, feature prioritization, backlog management, release planning, lifecycle management, and go-to-market support.</p>
+                <div class="info-card"><h3>🚀 Product Management</h3><p>Product strategy, roadmap planning, MVP definition, feature prioritization, backlog ownership, release planning, product lifecycle management, and go-to-market support.</p></div>
+                <div class="info-card"><h3>📋 Business Analysis</h3><p>Requirement gathering, BRD, FRD, SRS, user stories, acceptance criteria, gap analysis, stakeholder communication, business process mapping, and functional documentation.</p></div>
+                <div class="info-card"><h3>🏦 Domain Expertise</h3><p>BFSI workflows, banking solutions, enterprise security, PAM, MFA, EPM, RBAC, IAM, zero-trust architecture, and compliance-sensitive environments.</p></div>
+                <div class="info-card"><h3>🔄 Agile Delivery</h3><p>Scrum, Kanban, sprint planning, sprint reviews, backlog grooming, retrospectives, cross-functional collaboration, and Agile documentation.</p></div>
+                <div class="info-card"><h3>🛠️ Tools & Technologies</h3><p>Jira, Confluence, SQL, Python, Postman, REST APIs, Tableau, Power BI, Zoho Analytics, Figma, and Miro.</p></div>
+                <div class="info-card"><h3>📝 Content & Mentoring</h3><p>Business analysis guidance, product management insights, AI in product development, systems thinking, career mentorship, and practical real-world lessons.</p></div>
+            </div>
+        </section>
+
+        <!-- ── DOMAIN HIGHLIGHTS ── -->
+        <section class="panel section" id="domains">
+            <h2>Domain <span class="accent">Highlights</span></h2>
+            <p class="lead">Deep experience in highly regulated enterprise environments requiring strong auditability, authentication, and privileged access controls.</p>
+            <div class="domain-grid">
+                <div class="domain-card">
+                    <span class="icon">🏦</span>
+                    <h3>BFSI & Banking</h3>
+                    <p>Hands-on exposure to BFSI clients and banking-oriented enterprise requirements — secure access, compliance-sensitive workflows, and access governance for top-tier banks.</p>
                 </div>
-                <div class="info-card">
-                    <h3>Business Analysis</h3>
-                    <p>Requirement gathering, BRD, FRD, SRS, user stories, acceptance criteria, gap analysis, stakeholder management, workflow analysis, and business process mapping.</p>
+                <div class="domain-card">
+                    <span class="icon">🔐</span>
+                    <h3>Cybersecurity & IAM</h3>
+                    <p>Experience supporting products in highly regulated environments — PAM, MFA, EPM, RBAC, identity & access management, and zero-trust security architecture.</p>
                 </div>
-                <div class="info-card">
-                    <h3>Domain Expertise</h3>
-                    <p>BFSI workflows, enterprise security, PAM, MFA, EPM, RBAC, identity & access management, and zero-trust-focused product thinking.</p>
-                </div>
-                <div class="info-card">
-                    <h3>Agile Delivery</h3>
-                    <p>Scrum, Kanban, sprint planning, backlog grooming, sprint reviews, retrospectives, cross-functional collaboration, and Agile documentation.</p>
-                </div>
-                <div class="info-card">
-                    <h3>Tools & Technologies</h3>
-                    <p>Jira, Confluence, SQL, Python, Postman, REST APIs, Tableau, Power BI, and Zoho Analytics.</p>
-                </div>
-                <div class="info-card">
-                    <h3>Content Focus</h3>
-                    <p>Business analysis, product management, AI in product development, workflow thinking, and practical lessons from real-world product work.</p>
+                <div class="domain-card">
+                    <span class="icon">🤝</span>
+                    <h3>Enterprise Stakeholders</h3>
+                    <p>Deep understanding of stakeholder expectations in enterprise and BFSI accounts — requirement traceability, UAT support, implementation alignment, and solution documentation.</p>
                 </div>
             </div>
         </section>
 
+        <!-- ── CERTIFICATIONS ── -->
         <section class="panel section" id="certifications">
             <h2>Certifications</h2>
-            <p class="lead">A strong foundation in Scrum, product thinking, analytics, and business analysis.</p>
+            <p class="lead">A strong foundation in Scrum, product thinking, analytics, and modern business analysis practices.</p>
             <div class="cert-grid">
-                <div class="cert-card">
-                    <small>Professional Credential</small>
-                    <h3>Professional Scrum Master (PSM)</h3>
-                    <span class="badge">Scrum</span>
-                </div>
-                <div class="cert-card">
-                    <small>Professional Credential</small>
-                    <h3>Professional Scrum Product Owner (PSPO)</h3>
-                    <span class="badge">Product</span>
-                </div>
-                <div class="cert-card">
-                    <small>Specialization</small>
-                    <h3>Agile Business Analysis</h3>
-                    <span class="badge">Business Analysis</span>
-                </div>
-                <div class="cert-card">
-                    <small>Specialization</small>
-                    <h3>Certified Product Manager – Pendo</h3>
-                    <span class="badge">Product Management</span>
-                </div>
-                <div class="cert-card">
-                    <small>Specialization</small>
-                    <h3>AI For Product Management</h3>
-                    <span class="badge">AI + PM</span>
-                </div>
-                <div class="cert-card">
-                    <small>Specialization</small>
-                    <h3>Certified Business Analyst – LinkedIn Learning</h3>
-                    <span class="badge">BA Practice</span>
-                </div>
-                <div class="cert-card">
-                    <small>Foundation</small>
-                    <h3>Microsoft Essentials In Business Analysis</h3>
-                    <span class="badge">Business Analysis</span>
-                </div>
-                <div class="cert-card">
-                    <small>Foundation</small>
-                    <h3>Jira Fundamentals – Atlassian</h3>
-                    <span class="badge">Tools</span>
-                </div>
-                <div class="cert-card">
-                    <small>Foundation</small>
-                    <h3>Data Visualization – Coursera</h3>
-                    <span class="badge">Analytics</span>
-                </div>
-                <div class="cert-card">
-                    <small>Foundation</small>
-                    <h3>Project Management Essentials</h3>
-                    <span class="badge">Delivery</span>
-                </div>
+                <div class="cert-card"><small>Professional Credential</small><h3>Professional Scrum Master (PSM)</h3><span class="badge">Scrum</span></div>
+                <div class="cert-card"><small>Professional Credential</small><h3>Professional Scrum Product Owner (PSPO)</h3><span class="badge">Product</span></div>
+                <div class="cert-card"><small>Specialization</small><h3>Agile Business Analysis</h3><span class="badge">Business Analysis</span></div>
+                <div class="cert-card"><small>Specialization</small><h3>Certified Product Manager – Pendo</h3><span class="badge">Product Management</span></div>
+                <div class="cert-card"><small>Specialization</small><h3>AI For Product Management</h3><span class="badge">AI + PM</span></div>
+                <div class="cert-card"><small>Specialization</small><h3>Certified Business Analyst – LinkedIn Learning</h3><span class="badge">BA Practice</span></div>
+                <div class="cert-card"><small>Foundation</small><h3>Microsoft Essentials In Business Analysis</h3><span class="badge">Business Analysis</span></div>
+                <div class="cert-card"><small>Foundation</small><h3>Jira Fundamentals – Atlassian</h3><span class="badge">Tools</span></div>
+                <div class="cert-card"><small>Foundation</small><h3>Data Visualization – Coursera</h3><span class="badge">Analytics</span></div>
+                <div class="cert-card"><small>Foundation</small><h3>Project Management Essentials</h3><span class="badge">Delivery</span></div>
             </div>
         </section>
 
+        <!-- ── EDUCATION ── -->
         <section class="panel section" id="education">
             <h2>Education</h2>
-            <p class="lead">My academic background in Information Technology supports the analytical and technical side of my work.</p>
+            <p class="lead">My academic foundation in Information Technology supports the analytical and technical depth of my work.</p>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div>
-                        <small>K J Somaiya College of Engineering</small>
-                        <strong>Bachelor of Technology in Information Technology</strong>
-                        <p class="note">CGPA: 8.30 / 10.0 • 2018–2022</p>
-                    </div>
-                    <span class="badge">Engineering</span>
-                </div>
-                <div class="timeline-item">
-                    <div>
-                        <small>VidyaMandir Prashala</small>
-                        <strong>Higher Secondary Certificate (HSC)</strong>
-                        <p class="note">Score: 84.46 • Miraj, India • 2017–2018</p>
-                    </div>
-                    <span class="badge">Schooling</span>
-                </div>
+                <div class="timeline-item"><div><small>K J Somaiya College of Engineering • Mumbai, India</small><strong>Bachelor of Technology in Information Technology</strong><p class="note">CGPA: 8.30 / 10.0 • 2018–2022</p></div><span class="badge">Engineering</span></div>
+                <div class="timeline-item"><div><small>VidyaMandir Prashala • Miraj, India</small><strong>Higher Secondary Certificate (HSC)</strong><p class="note">Score: 84.46% • 2017–2018</p></div><span class="badge">Schooling</span></div>
             </div>
         </section>
 
+        <!-- ── CONNECT ── -->
         <section class="footer-cta" id="connect">
             <div class="panel connect-card">
-                <h2 style="margin-top: 0;">Let’s connect</h2>
-                <p class="lead" style="margin-bottom: 0;">
-                    If you want to connect professionally, discuss product and business analysis, or explore how AI can add value to product management,
-                    I’d love to stay in touch.
-                </p>
-                <div class="cta-row">
-                    <a class="btn btn-primary" href="https://www.linkedin.com/in/tirth-thaker-psm-i-and-pspo-i-trained-416a19185/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a class="btn btn-secondary" href="https://topmate.io/tirth_thakerpsm_i_and_psp/" target="_blank" rel="noopener noreferrer">Topmate</a>
-                    <a class="btn btn-secondary" href="https://www.instagram.com/tirththaker11/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <h2 style="margin-top:0;">Let's <span class="accent">Connect</span></h2>
+                <p class="lead" style="margin-bottom:0;">If you want to discuss product strategy, business analysis, or how AI can create measurable product value — I'd love to connect.</p>
+                <div class="social-row" style="margin-top:18px;">
+                    <a class="social-btn social-linkedin" href="https://www.linkedin.com/in/tirth-thaker-psm-i-and-pspo-i-trained-416a19185/" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a class="social-btn social-topmate" href="https://topmate.io/tirth_thakerpsm_i_and_psp/" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Topmate
+                    </a>
+                    <a class="social-btn social-instagram" href="https://www.instagram.com/tirththaker11/?hl=en" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        Instagram
+                    </a>
                 </div>
-
-                <div class="info-card" style="margin-top: 18px;">
-                    <h3>Prefer email?</h3>
-                    <p>
-                        Reach me directly at
-                        <a href="mailto:tirththaker8704@gmail.com" style="color: var(--accent); font-weight: 600;">tirththaker8704@gmail.com</a>
-                        for professional conversations, collaborations, and opportunities.
-                    </p>
-                </div>
+                <div class="info-card" style="margin-top:18px;"><h3>📧 Prefer email?</h3><p>Reach me at <a href="mailto:tirththaker2022@gmail.com" style="color:var(--accent);font-weight:600;">tirththaker2022@gmail.com</a> for collaborations, consulting, and career opportunities.</p></div>
+                <div class="info-card" style="margin-top:10px;"><h3>📞 Phone</h3><p><span style="color:var(--accent);font-weight:600;">+91 9579483111</span></p></div>
             </div>
-
-            <div class="panel section" style="margin-top: 0;">
-                <h3 style="margin-top: 0;">Quick links</h3>
+            <div class="panel section" style="margin-bottom:0;">
+                <h3 style="margin-top:0;">Quick links</h3>
                 <div class="connect-list">
                     <a class="connect-link" href="https://www.linkedin.com/in/tirth-thaker-psm-i-and-pspo-i-trained-416a19185/" target="_blank" rel="noopener noreferrer">
-                        <span>Connect with me on LinkedIn</span>
+                        <span style="display:flex;align-items:center;gap:10px;">
+                            <svg viewBox="0 0 24 24" fill="#0077b5" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            Connect on LinkedIn
+                        </span>
                         <span>↗</span>
                     </a>
-                    <a class="connect-link" href="mailto:tirththaker8704@gmail.com">
-                        <span>Email me at tirththaker8704@gmail.com</span>
+                    <a class="connect-link" href="mailto:tirththaker2022@gmail.com">
+                        <span>📧 tirththaker2022@gmail.com</span>
                         <span>✉</span>
                     </a>
                     <a class="connect-link" href="https://topmate.io/tirth_thakerpsm_i_and_psp/" target="_blank" rel="noopener noreferrer">
-                        <span>Book or explore Topmate</span>
+                        <span style="display:flex;align-items:center;gap:10px;">
+                            <svg viewBox="0 0 24 24" fill="#6366f1" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Book a session on Topmate
+                        </span>
                         <span>↗</span>
                     </a>
                     <a class="connect-link" href="https://www.instagram.com/tirththaker11/?hl=en" target="_blank" rel="noopener noreferrer">
-                        <span>Follow for daily updates on BA, product, and AI</span>
+                        <span style="display:flex;align-items:center;gap:10px;">
+                            <svg viewBox="0 0 24 24" fill="#e11d48" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            Follow on Instagram
+                        </span>
                         <span>↗</span>
+                    </a>
+                    <a class="connect-link" href="tel:+919579483111">
+                        <span>📞 +91 9579483111</span>
+                        <span>📱</span>
                     </a>
                 </div>
             </div>
         </section>
+
+        <!-- ── DAILY NEWS CAROUSEL ── -->
+        <section class="news-section" id="daily-news">
+            <div class="panel" style="padding:28px;">
+                <div class="carousel-header">
+                    <div>
+                        <h2>Daily <span>Insights</span> Feed</h2>
+                        <div class="carousel-subtitle">Today's curated stories on AI, Product Management & Technology</div>
+                    </div>
+                    <div class="carousel-date" id="todayDate"></div>
+                </div>
+                <div class="cat-tabs">
+                    <button class="cat-tab active" data-cat="all" onclick="filterSlides('all')">All</button>
+                    <button class="cat-tab" data-cat="ai" onclick="filterSlides('ai')">🤖 AI</button>
+                    <button class="cat-tab" data-cat="pm" onclick="filterSlides('pm')">📋 Product Mgmt</button>
+                    <button class="cat-tab" data-cat="tech" onclick="filterSlides('tech')">⚡ Technology</button>
+                </div>
+                <div class="carousel-window">
+                    <div class="carousel-track" id="carouselTrack">
+
+                        <article class="carousel-slide" data-category="ai">
+                            <div class="news-card">
+                                <div class="news-kicker kicker-ai">🤖 AI Transformation</div>
+                                <h3>Agentic AI Is Redefining How Teams Work in 2026</h3>
+                                <p>The industry is shifting from reactive generative AI to proactive Agentic AI — systems that understand goals, plan autonomously, and execute multi-step workflows. OpenAI's GPT-5.4 and Microsoft's multi-model Copilot are leading this charge across enterprise.</p>
+                                <div class="news-meta"><span>📅 Apr 9, 2026</span><span>⏱ 3 min read</span></div>
+                            </div>
+                            <div class="quote-card">
+                                <div><div class="quote-mark">"</div><p>"Artificial intelligence is the new electricity — it will transform every industry."</p></div>
+                                <div class="quote-author"><span>Andrew Ng</span><span class="badge">AI Thought Leader</span></div>
+                            </div>
+                        </article>
+
+                        <article class="carousel-slide" data-category="pm">
+                            <div class="news-card">
+                                <div class="news-kicker kicker-pm">📋 Product Management</div>
+                                <h3>PMs Are Becoming "Agent Managers" — The Role Is Evolving Fast</h3>
+                                <p>Product managers are shifting from operators to architects, overseeing AI agents that handle drafting documentation, competitive analysis, and release updates. 90% of product leaders are now directly accountable for revenue outcomes.</p>
+                                <div class="news-meta"><span>📅 Apr 9, 2026</span><span>⏱ 4 min read</span></div>
+                            </div>
+                            <div class="quote-card">
+                                <div><div class="quote-mark">"</div><p>"Fall in love with the problem, not the solution."</p></div>
+                                <div class="quote-author"><span>Marty Cagan</span><span class="badge">Product Visionary</span></div>
+                            </div>
+                        </article>
+
+                        <article class="carousel-slide" data-category="tech">
+                            <div class="news-card">
+                                <div class="news-kicker kicker-tech">⚡ Technology</div>
+                                <h3>Alibaba Launches 10,000-Chip AI Cluster; Nuclear Batteries Explored</h3>
+                                <p>Alibaba deployed its "Zhenwu"-powered computing cluster while DARPA-backed Avalanche Energy explores nuclear batteries for data centers. 96% of enterprises are now deploying AI agents, but grappling with "AI sprawl" inefficiencies.</p>
+                                <div class="news-meta"><span>📅 Apr 9, 2026</span><span>⏱ 3 min read</span></div>
+                            </div>
+                            <div class="quote-card">
+                                <div><div class="quote-mark">"</div><p>"Technology is best when it brings people together."</p></div>
+                                <div class="quote-author"><span>Matt Mullenweg</span><span class="badge">Tech Pioneer</span></div>
+                            </div>
+                        </article>
+
+                        <article class="carousel-slide" data-category="ai">
+                            <div class="news-card">
+                                <div class="news-kicker kicker-ai">🤖 AI Safety</div>
+                                <h3>Anthropic Unveils "Claude Mythos" for Cybersecurity Defense</h3>
+                                <p>Anthropic's restricted-preview model is designed to identify and patch software vulnerabilities. Access is limited to Project Glasswing partners, highlighting the growing intersection of AI power and responsible deployment.</p>
+                                <div class="news-meta"><span>📅 Apr 7, 2026</span><span>⏱ 4 min read</span></div>
+                            </div>
+                            <div class="quote-card">
+                                <div><div class="quote-mark">"</div><p>"AI is one of the most important things humanity is working on."</p></div>
+                                <div class="quote-author"><span>Sundar Pichai</span><span class="badge">Google CEO</span></div>
+                            </div>
+                        </article>
+
+                        <article class="carousel-slide" data-category="pm">
+                            <div class="news-card">
+                                <div class="news-kicker kicker-pm">📋 PM Strategy</div>
+                                <h3>AI-Speed Release Cycles Are Replacing Quarterly Planning</h3>
+                                <p>The most successful product orgs are building continuous learning machines that integrate data, AI, and rapid user-facing experiments. Manual feedback tagging is now considered outdated — AI-powered platforms cluster themes and score sentiment in real-time.</p>
+                                <div class="news-meta"><span>📅 Apr 8, 2026</span><span>⏱ 5 min read</span></div>
+                            </div>
+                            <div class="quote-card">
+                                <div><div class="quote-mark">"</div><p>"The best way to predict the future is to invent it."</p></div>
+                                <div class="quote-author"><span>Alan Kay</span><span class="badge">Computer Scientist</span></div>
+                            </div>
+                        </article>
+
+                        <article class="carousel-slide" data-category="tech">
+                            <div class="news-card">
+                                <div class="news-kicker kicker-tech">⚡ Infrastructure</div>
+                                <h3>Google Releases Gemma 4; Intel Pushes Agentic AI Inference</h3>
+                                <p>Google's open-weight Gemma 4 models support edge-to-datacenter reasoning while Intel and SambaNova announced a new blueprint combining GPUs, RDUs, and Xeon 6 processors for efficient agentic AI workloads.</p>
+                                <div class="news-meta"><span>📅 Apr 8, 2026</span><span>⏱ 3 min read</span></div>
+                            </div>
+                            <div class="quote-card">
+                                <div><div class="quote-mark">"</div><p>"Any sufficiently advanced technology is indistinguishable from magic."</p></div>
+                                <div class="quote-author"><span>Arthur C. Clarke</span><span class="badge">Futurist</span></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <div class="carousel-dots" id="carouselDots"></div>
+                    <div class="carousel-controls">
+                        <button class="icon-btn" onclick="prevSlide()" aria-label="Previous">‹</button>
+                        <button class="icon-btn" onclick="nextSlide()" aria-label="Next">›</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── LIVE NEWS FEED (Auto-updating) ── -->
+        <section class="live-news-section" id="live-feed">
+            <div class="panel" style="padding:28px;">
+                <div class="live-news-header">
+                    <div>
+                        <h2>Live <span>News</span> Feed</h2>
+                        <div class="carousel-subtitle">Fresh articles updated automatically every day — AI, Product Management & Technology</div>
+                    </div>
+                    <span class="live-badge">LIVE · Auto-updating</span>
+                </div>
+                <div class="news-feed-tabs">
+                    <button class="feed-tab active" data-feed="all" onclick="switchFeed('all')">🌐 All Topics</button>
+                    <button class="feed-tab" data-feed="ai" onclick="switchFeed('ai')">🤖 AI & ML</button>
+                    <button class="feed-tab" data-feed="pm" onclick="switchFeed('pm')">📋 Product Management</button>
+                    <button class="feed-tab" data-feed="tech" onclick="switchFeed('tech')">⚡ Technology</button>
+                </div>
+                <div class="news-feed-grid" id="liveFeedGrid">
+                    <div class="feed-loading"><div class="spinner"></div>Fetching today's latest news...</div>
+                </div>
+                <div class="last-updated" id="lastUpdated"></div>
+            </div>
+        </section>
+
+        <footer class="footer-bottom">
+            <p>© 2026 Tirth Hareshkumar Thaker · Product Manager & Business Analyst · Mumbai, India · <a href="https://www.linkedin.com/in/tirth-thaker-psm-i-and-pspo-i-trained-416a19185/" target="_blank">LinkedIn</a></p>
+        </footer>
     </main>
 
     <script>
-        const totalSlides = 3;
+        // Set today's date
+        document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+        // ── CURATED CAROUSEL ──
+        let allSlides = [...document.querySelectorAll('.carousel-slide')];
+        let visibleSlides = [...allSlides];
         let activeSlide = 0;
         let carouselTimer;
+        const track = document.getElementById('carouselTrack');
+        const dotsContainer = document.getElementById('carouselDots');
 
-        function renderCarousel() {
-            const track = document.getElementById('carouselTrack');
-            const dots = document.querySelectorAll('.dot');
-            if (!track) return;
-
-            track.style.transform = `translateX(-${activeSlide * 100}%)`;
-            dots.forEach((dot, index) => dot.classList.toggle('active', index === activeSlide));
+        function buildDots() {
+            dotsContainer.innerHTML = '';
+            visibleSlides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'dot' + (i === activeSlide ? ' active' : '');
+                dot.setAttribute('aria-label', `Slide ${i + 1}`);
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            });
         }
 
-        function goToSlide(index) {
-            activeSlide = (index + totalSlides) % totalSlides;
+        function renderCarousel() {
+            allSlides.forEach(s => s.style.display = 'none');
+            visibleSlides.forEach(s => { s.style.display = ''; s.style.minWidth = '100%'; });
+            if (visibleSlides.length === 0) return;
+            track.style.transform = `translateX(-${activeSlide * 100}%)`;
+            buildDots();
+        }
+
+        function goToSlide(i) {
+            activeSlide = ((i % visibleSlides.length) + visibleSlides.length) % visibleSlides.length;
+            renderCarousel();
+            restartCarousel();
+        }
+        function nextSlide() { goToSlide(activeSlide + 1); }
+        function prevSlide() { goToSlide(activeSlide - 1); }
+        function startCarousel() { carouselTimer = setInterval(() => { activeSlide = (activeSlide + 1) % visibleSlides.length; renderCarousel(); }, 5000); }
+        function restartCarousel() { clearInterval(carouselTimer); startCarousel(); }
+
+        function filterSlides(cat) {
+            document.querySelectorAll('.cat-tab').forEach(t => t.classList.toggle('active', t.dataset.cat === cat));
+            if (cat === 'all') { visibleSlides = [...allSlides]; }
+            else { visibleSlides = allSlides.filter(s => s.dataset.category === cat); }
+            visibleSlides.forEach(s => track.appendChild(s));
+            allSlides.filter(s => !visibleSlides.includes(s)).forEach(s => track.appendChild(s));
+            activeSlide = 0;
             renderCarousel();
             restartCarousel();
         }
 
-        function nextSlide() {
-            goToSlide(activeSlide + 1);
-        }
-
-        function prevSlide() {
-            goToSlide(activeSlide - 1);
-        }
-
-        function startCarousel() {
-            carouselTimer = window.setInterval(() => {
-                activeSlide = (activeSlide + 1) % totalSlides;
-                renderCarousel();
-            }, 5000);
-        }
-
-        function restartCarousel() {
-            window.clearInterval(carouselTimer);
-            startCarousel();
-        }
-
         renderCarousel();
         startCarousel();
+
+        // ── LIVE NEWS FEED (Auto-updating via RSS) ──
+        const RSS_FEEDS = {
+            ai: 'https://news.google.com/rss/search?q=artificial+intelligence+AI+machine+learning&hl=en-IN&gl=IN&ceid=IN:en',
+            pm: 'https://news.google.com/rss/search?q=product+management+product+manager&hl=en-IN&gl=IN&ceid=IN:en',
+            tech: 'https://news.google.com/rss/search?q=technology+software+startup&hl=en-IN&gl=IN&ceid=IN:en'
+        };
+
+        const PROXY_URL = 'https://api.rss2json.com/v1/api.json?rss_url=';
+        let allFeedArticles = { ai: [], pm: [], tech: [] };
+        let currentFeed = 'all';
+
+        const categoryLabels = {
+            ai: { emoji: '🤖', label: 'AI & ML', color: '#4f46e5' },
+            pm: { emoji: '📋', label: 'Product Management', color: '#d97706' },
+            tech: { emoji: '⚡', label: 'Technology', color: '#0d9488' }
+        };
+
+        function timeAgo(dateStr) {
+            const now = new Date();
+            const date = new Date(dateStr);
+            const diffMs = now - date;
+            const diffMins = Math.floor(diffMs / 60000);
+            if (diffMins < 60) return `${diffMins}m ago`;
+            const diffHrs = Math.floor(diffMins / 60);
+            if (diffHrs < 24) return `${diffHrs}h ago`;
+            const diffDays = Math.floor(diffHrs / 24);
+            return `${diffDays}d ago`;
+        }
+
+        function renderFeedArticles(articles) {
+            const grid = document.getElementById('liveFeedGrid');
+            if (articles.length === 0) {
+                grid.innerHTML = '<div class="feed-error">📰 No articles found. Try refreshing the page or check back later.</div>';
+                return;
+            }
+            grid.innerHTML = articles.slice(0, 12).map(a => `
+                <div class="live-article">
+                    <div class="feed-source">
+                        <span class="source-dot" style="background:${a.catColor}"></span>
+                        ${a.catEmoji} ${a.catLabel} · ${a.source || 'News'}
+                    </div>
+                    <h3><a href="${a.link}" target="_blank" rel="noopener noreferrer">${a.title}</a></h3>
+                    <div class="feed-date">📅 ${timeAgo(a.pubDate)}</div>
+                </div>
+            `).join('');
+        }
+
+        function switchFeed(feed) {
+            currentFeed = feed;
+            document.querySelectorAll('.feed-tab').forEach(t => t.classList.toggle('active', t.dataset.feed === feed));
+            let articles;
+            if (feed === 'all') {
+                articles = [...allFeedArticles.ai, ...allFeedArticles.pm, ...allFeedArticles.tech]
+                    .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+            } else {
+                articles = allFeedArticles[feed] || [];
+            }
+            renderFeedArticles(articles);
+        }
+
+        async function fetchFeed(category) {
+            try {
+                const url = PROXY_URL + encodeURIComponent(RSS_FEEDS[category]);
+                const res = await fetch(url);
+                const data = await res.json();
+                if (data.status === 'ok' && data.items) {
+                    const cat = categoryLabels[category];
+                    return data.items.map(item => ({
+                        title: item.title,
+                        link: item.link,
+                        pubDate: item.pubDate,
+                        source: item.author || '',
+                        category: category,
+                        catEmoji: cat.emoji,
+                        catLabel: cat.label,
+                        catColor: cat.color
+                    }));
+                }
+            } catch (e) {
+                console.warn(`Feed fetch failed for ${category}:`, e);
+            }
+            return [];
+        }
+
+        async function loadAllFeeds() {
+            const grid = document.getElementById('liveFeedGrid');
+            grid.innerHTML = '<div class="feed-loading"><div class="spinner"></div>Fetching today\'s latest news...</div>';
+
+            try {
+                const [aiArticles, pmArticles, techArticles] = await Promise.all([
+                    fetchFeed('ai'),
+                    fetchFeed('pm'),
+                    fetchFeed('tech')
+                ]);
+
+                allFeedArticles.ai = aiArticles;
+                allFeedArticles.pm = pmArticles;
+                allFeedArticles.tech = techArticles;
+
+                switchFeed(currentFeed);
+
+                const now = new Date();
+                document.getElementById('lastUpdated').textContent =
+                    `Last updated: ${now.toLocaleString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}`;
+
+            } catch (e) {
+                grid.innerHTML = '<div class="feed-error">⚠️ Could not load live news. Please check your connection and refresh.</div>';
+            }
+        }
+
+        // Load feeds on page load
+        loadAllFeeds();
+
+        // Auto-refresh every 30 minutes
+        setInterval(loadAllFeeds, 30 * 60 * 1000);
+
+        // ── Scroll Animations ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.panel, .feature, .info-card, .cert-card, .timeline-item, .exp-card, .domain-card, .live-article').forEach(el => {
+            el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
